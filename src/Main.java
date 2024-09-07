@@ -18,30 +18,25 @@ public class Main {
             System.out.println("задача 2");
             int clientOS = 1;
             int clientDeviceYear = 2015;
-            switch (clientOS) {
-                case 0:
-                    System.out.println("Установите версию для IOS");
-                    break;
-                case 1:
-                    System.out.println("Установите версию для Android");
-                    break;
-                default:
-                    System.out.println("Операционной системы не существует");
-            } if (clientDeviceYear < 2015) {
-            System.out.println("(облегченную версию)");
-        } else {
-            System.out.println("");
-        }
+            if (clientOS == 0 && clientDeviceYear < 2015) {
+                System.out.println("Установите облегченную версию для iOS по ссылке");
+            } else if (clientOS == 0 && clientDeviceYear >= 2015) {
+                System.out.println("Установите обычную версию для iOS по ссылке");
+            } else if (clientOS == 1 && clientDeviceYear < 2015) {
+                System.out.println("Установите облегченную версию для Android по ссылке");
+            } else {
+                System.out.println("Установите обычную версию для Android по ссылке")
+            }
         }
         {
             System.out.println("");
             System.out.println("задача 3");
             int year = 2021;
-            if (year % 4 == 0 && year >= 1584 && year % 400 == 0 && year % 100 != 0) {
-                System.out.println("Год " + year + " является високосный");
-            } else {
-                System.out.println("Год " + year + " не является високосный");
-            }
+            if (year >= 1584 && (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+            System.out.println("Год " + year + " является високосный");
+        } else{
+            System.out.println("Год " + year + " не является високосный");
+        }
         }
         {
             System.out.println("");
