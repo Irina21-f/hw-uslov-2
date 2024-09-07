@@ -17,26 +17,27 @@ public class Main {
             System.out.println("");
             System.out.println("задача 2");
             int clientOS = 1;
-            int clientsDeviceYear = 2015;
-            if (clientOS == 0) {
-                if (clientsDeviceYear < 2015) {
-                    System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-                } else {
-                    System.out.println("Установите версию приложения для iOS по ссылке");
-                }
-            } else if (clientOS == 1) {
-                if (clientsDeviceYear < 2015) {
-                    System.out.println("Установите облегченную версию приложения для Android по ссылке");
-                } else {
-                    System.out.println("Установите версию приложения для Android по ссылке");
-                }
-            }
+            int clientDeviceYear = 2015;
+            switch (clientOS) {
+                case 0:
+                    System.out.println("Установите версию для IOS");
+                    break;
+                case 1:
+                    System.out.println("Установите версию для Android");
+                    break;
+                default:
+                    System.out.println("Операционной системы не существует");
+            } if (clientDeviceYear < 2015) {
+            System.out.println("(облегченную версию)");
+        } else {
+            System.out.println("");
+        }
         }
         {
             System.out.println("");
             System.out.println("задача 3");
             int year = 2021;
-            if (year % 4 == 0 && year >= 1584 && year % 400 == 0) {
+            if (year % 4 == 0 && year >= 1584 && year % 400 == 0 && year % 100 != 0) {
                 System.out.println("Год " + year + " является високосный");
             } else {
                 System.out.println("Год " + year + " не является високосный");
